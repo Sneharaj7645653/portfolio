@@ -164,7 +164,7 @@ function FoundationsPanel() {
 function JourneyPanel() {
   return (
     <div>
-      <PanelTitle sub="Milestones & triumphs along the way.">Journey</PanelTitle>
+      <PanelTitle sub="Where I've been, what I've led, and a few podiums along the way.">Journey</PanelTitle>
       <div className="relative pl-6">
         <div className="absolute bottom-2 left-[9px] top-2 w-0.5 rounded-full bg-gradient-to-b from-accent via-accent-2 to-accent opacity-50" />
         <div className="space-y-3">

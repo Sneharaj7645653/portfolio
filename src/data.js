@@ -165,18 +165,17 @@ export const FOUNDATION_GROUPS = [
 /* -------------------- JOURNEY -------------------- */
 
 export const MILESTONES = [
-  { date: 'Aug 2024 – Present', title: 'Dual B.Sc. CS Degrees', body: 'Enrolled at Scaler School of Technology & BITS Pilani.', icon: '🎓' },
-  { date: 'Dec 2024 – Jul 2025', title: 'LDC Product Lead', body: 'Built the NSET AI Assistant & grew a 2,000+ member community.', icon: '🚀' },
-  { date: 'Aug 2025 – Present', title: "Core Leadership @ Orators' Society", body: 'Executed the 2026 roadmap — 6 major events in 5 months.', icon: '🎤' },
-  { date: 'Aug 2025 – Jun 2026', title: 'Teaching Assistant @ InterviewBit', body: 'Mentored 23 CS students; 61% past the 7.5 CGPA threshold.', icon: '📚' },
-  { date: 'May 2026 – Present', title: 'PM Intern @ Cysterhood', body: 'Scaled the web MVP to 100 DAU & a 200+ waitlist.', icon: '🌸' },
+  { date: '2026', title: 'Sponsorships & Partnerships @ Yugaantar 2026', body: 'Driving brand outreach and partnerships under the Fashion & Lifestyle vertical for Scaler’s annual fest.', icon: '🤝' },
+  { date: 'May 2026 – Aug 2026', title: 'PM Intern @ Cysterhood', body: 'Shipped the 0-to-1 PCOS lifestyle MVP, scaling to 100+ DAU, a 200+ waitlist, and a 700+ WhatsApp community.', icon: '🌸' },
+  { date: 'Aug 2025 – Present', title: "Core Leadership @ The Orators' Society", body: 'Co-led a 12-member team to pull off 6 major events in 5 months with 1,000+ total participants.', icon: '🎤' },
+  { date: 'Aug 2025 – Jun 2026', title: 'Teaching Assistant @ InterviewBit', body: 'Mentored 23 CS students across DSA, Full-Stack & DBMS—helping 61% push their CGPA past 7.5.', icon: '📚' },
+  { date: 'Aug 2024 – Present', title: 'Dual B.Sc. CS Degrees', body: 'Pursuing Computer Science at Scaler School of Technology & BITS Pilani (7.8 CGPA).', icon: '🎓' },
 ]
 
 export const TRIUMPHS = [
-  { medal: '🥉', title: '3rd Place · ProdXPulse 2026', sub: 'National AI Product Festival' },
-  { medal: '🥈', title: '2nd Place · Ship to Scale', sub: 'Product Hackathon' },
-  { medal: '🥇', title: '1st Place · The Devil’s Advocate', sub: 'Speaking Championship · 200+ @ St. Joseph’s' },
-  { medal: '🥉', title: '3rd Place · TEDx Speaking', sub: 'Speaking Championship @ St. Francis' },
+  { medal: '🏆', title: 'Finalist (Top 20 of 4,000+) · ProdXPulse 2026', sub: 'National AI Product Festival — pitched SpeakCraft.' },
+  { medal: '🥇', title: '1st Place · The Devil’s Advocate', sub: 'Inter-collegiate Speaking Championship · 200+ participants.' },
+  { medal: '🥉', title: '3rd Place · TEDx Speaking Competition', sub: 'Inter-collegiate Speaking Championship · 100+ participants.' },
 ]
 
 /* -------------------- SANCTUARY -------------------- */
