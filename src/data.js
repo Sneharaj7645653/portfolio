@@ -134,38 +134,31 @@ export const PROJECTS = [
   },
 ]
 
-/* -------------------- PRODUCT MANAGEMENT -------------------- */
+/* -------------------- FOUNDATIONS -------------------- */
 
-export const PM_COMPETENCIES = [
-  'Product Discovery', 'PRDs & User Stories', 'Roadmap (Now/Next/Later)',
-  'RICE & Kano', 'JTBD', 'Lean Startup', 'TAM/SAM/SOM',
-  'A/B Testing', 'Funnel & Cohort Analysis', 'Jira', 'Figma', 'Notion',
+export const FOUNDATION_PROFILES = [
+  { label: 'GitHub', href: 'https://github.com/Sneharaj7645653' },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/sneharaj7645653/' },
+  { label: 'Kaggle', href: 'https://www.kaggle.com/sneharaj10295' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sneha-raj-927748332/' },
 ]
 
-export const PM_CASES = [
+export const FOUNDATION_GROUPS = [
   {
-    title: 'Cysterhood',
-    role: 'PM Intern',
-    period: 'May 2026 – Present',
-    problem: 'PCOD/PCOS lifestyle tracking friction — users lacked a habit-forming, empathetic companion.',
-    execution: [
-      'Ran 15+ user interviews and scoped a focused MVP.',
-      'Grew the platform to 100 DAU & a 200+ waitlist via organic referral loops.',
-      'Authored the PRD for the web-to-mobile migration.',
-    ],
-    tags: ['Discovery', 'Growth Loops', 'PRD', 'Mobile'],
+    title: 'AI, ML & GenAI',
+    skills: ['Classical ML (CML)', 'Unsupervised ML', 'Deep Learning', 'Computer Vision (CV)', 'NLP', 'GenAI (LangChain & LangGraph)'],
   },
   {
-    title: 'NSET AI Conversational Assistant',
-    role: 'LDC Product Lead',
-    period: 'Dec 2024 – Jul 2025',
-    problem: 'Guidance barriers for regional NSET exam aspirants navigating admissions alone.',
-    execution: [
-      'Applied Lean Startup methodology to validate the value proposition.',
-      'Managed the project end-to-end via Jira & Notion.',
-      'Scaled the active user community to 2,000+ members.',
-    ],
-    tags: ['Lean Startup', 'Conversational AI', 'Community', 'Jira/Notion'],
+    title: 'Web, Backend & Infra',
+    skills: ['HTML & CSS', 'JavaScript', 'React', 'MERN Stack', 'Spring Boot', 'DevOps'],
+  },
+  {
+    title: 'Core CS & Data',
+    skills: ['DSA', 'DBMS', 'OS & Networking', 'Data Engineering (Learning Currently 🌱)'],
+  },
+  {
+    title: 'Product & Strategy',
+    skills: ['Product Discovery', 'PRDs', 'Roadmapping', 'RICE & JTBD', 'User Interviews', 'Funnel & Cohort Analysis', 'Behavioral Psych', 'Figma'],
   },
 ]
 

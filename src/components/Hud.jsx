@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   Home, Sparkles, Code2, Rocket, TreePine, Flower2, Mail,
   ChevronLeft, ChevronRight, MapPin, Phone, Linkedin, Github,
-  Lightbulb, TrendingUp, Target, BookOpen, Feather, Activity, Sprout,
+  BookOpen, Feather, Activity, Sprout,
   Quote, ArrowRight, X, Trophy, ExternalLink, Maximize2, Minimize2, Heart,
 } from 'lucide-react'
 import { Tag, FlowerRating } from './shared.jsx'
@@ -11,7 +11,7 @@ import Signature from './Signature.jsx'
 import ThemeToggle from './ThemeToggle.jsx'
 import {
   CONTACT, ABOUT, PROJECTS,
-  PM_COMPETENCIES, PM_CASES, MILESTONES, TRIUMPHS,
+  FOUNDATION_PROFILES, FOUNDATION_GROUPS, MILESTONES, TRIUMPHS,
   BOOK_FILTERS, BOOKS, POEMS, BADMINTON_STORY, BADMINTON_WHY, BADMINTON_QUOTE,
   SUSTAINABILITY_INTRO, SUSTAINABILITY,
 } from '../data.js'
@@ -20,7 +20,7 @@ const STATIONS = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: Sparkles },
   { id: 'tech', label: 'Projects', icon: Code2 },
-  { id: 'product', label: 'Product', icon: Rocket },
+  { id: 'product', label: 'Foundations', icon: Rocket },
   { id: 'journey', label: 'Journey', icon: TreePine },
   { id: 'sanctuary', label: 'Sanctuary', icon: Flower2 },
   { id: 'contact', label: 'Contact', icon: Mail },
@@ -125,28 +125,37 @@ function ProjectsPanel() {
   )
 }
 
-function ProductPanel() {
+function FoundationsPanel() {
   return (
     <div>
-      <PanelTitle sub="Strategy, discovery & outcomes.">Product Management</PanelTitle>
-      <h4 className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-accent"><Target className="h-3.5 w-3.5" /> Competencies</h4>
-      <div className="mt-2 flex flex-wrap gap-1.5">{PM_COMPETENCIES.map((c) => <Tag key={c}>{c}</Tag>)}</div>
-      <div className="mt-4 space-y-3">
-        {PM_CASES.map((c) => (
-          <div key={c.title} className="rounded-2xl border border-line bg-chip-bg p-3">
-            <h3 className="font-display text-base font-semibold text-heading">{c.title}</h3>
-            <p className="text-xs font-medium text-accent">{c.role} · <span className="text-muted">{c.period}</span></p>
-            <p className="mt-2 flex gap-1.5 text-xs text-body/80"><Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" /><span><b className="text-heading">Problem: </b>{c.problem}</span></p>
-            <p className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-heading"><TrendingUp className="h-3.5 w-3.5 text-accent" /> Execution</p>
-            <ul className="mt-1 space-y-1">
-              {c.execution.map((e, i) => (
-                <li key={i} className="flex gap-2 text-xs leading-relaxed text-body/80"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" /><span>{e}</span></li>
-              ))}
-            </ul>
-            <div className="mt-2 flex flex-wrap gap-1.5">{c.tags.map((t) => <Tag key={t}>{t}</Tag>)}</div>
+      <PanelTitle sub="My profiles, coursework, and the toolkit behind the builds.">Foundations</PanelTitle>
+      <div className="mb-5 flex flex-wrap gap-2">
+        {FOUNDATION_PROFILES.map((profile) => (
+          <a
+            key={profile.label}
+            href={profile.href}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-line bg-chip-bg px-3 py-1.5 text-xs font-semibold text-accent transition hover:-translate-y-0.5 hover:bg-surface"
+          >
+            {profile.label} <ExternalLink className="h-3 w-3" />
+          </a>
+        ))}
+      </div>
+      <h4 className="text-[11px] font-semibold uppercase tracking-widest text-accent">Coursework &amp; Toolkit</h4>
+      <div className="mt-2 space-y-2.5">
+        {FOUNDATION_GROUPS.map((group) => (
+          <div key={group.title} className="rounded-2xl border border-line bg-chip-bg p-3">
+            <h3 className="mb-2 text-sm font-semibold text-heading">{group.title}</h3>
+            <div className="flex flex-wrap gap-1.5">
+              {group.skills.map((skill) => <Tag key={skill}>{skill}</Tag>)}
+            </div>
           </div>
         ))}
       </div>
+      <p className="mt-4 rounded-2xl border border-line bg-chip-bg p-3 text-xs leading-relaxed text-body/75">
+        📝 Too lazy to list every single topic I learned under these right now—syllabus breakdowns coming soon (probably).
+      </p>
     </div>
   )
 }
@@ -355,7 +364,7 @@ function ContactPanel() {
 }
 
 // Home (index 0) intentionally has no panel — the landing is the scene alone.
-const PANELS = [null, AboutPanel, ProjectsPanel, ProductPanel, JourneyPanel, SanctuaryPanel, ContactPanel]
+const PANELS = [null, AboutPanel, ProjectsPanel, FoundationsPanel, JourneyPanel, SanctuaryPanel, ContactPanel]
 
 /* ---------------- HUD shell ---------------- */
 
