@@ -585,14 +585,33 @@ It was thoughtful, clever and nuanced`,
 
 export const POEM_PLACEHOLDERS = [
   {
-    title: '[Poem Title 1]',
-    excerpt: '[Paste stanza / poem here...]',
-    body: '[Paste stanza / poem here...]',
+    title: 'An accident',
+    excerpt: 'You would never know what happened\nI wouldn’t let you see',
+    body: `You would never know what happened
+I wouldn't let you see
+But the knife
+Might someday bemoan the life's cease
+Thus, you would not discover
+That it was not happenstance
+A rainy day, and the hill so slant
+It was not merely a calamity
+It was destiny woven with trembling hands
+It was not per chance
+It was thoughtful, clever and nuanced`,
   },
   {
-    title: '[Poem Title 2]',
-    excerpt: '[Paste stanza / poem here...]',
-    body: '[Paste stanza / poem here...]',
+    title: 'Unnatural life',
+    excerpt: 'Would you know if I die\nOf course, the body will show',
+    body: `Would you know if I die
+Of course, the body will show
+No sinking breath, nor a blinking eye
+No growing nails, just skin turning pale
+No smacking lips, a puckered face
+Free of guilt
+A heavy body succumbed to gravity
+A face free of worries
+A peaceful pallor spread across wrinkled forehead
+But what if these don't show?`,
   },
 ]
 
