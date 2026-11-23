@@ -6,11 +6,8 @@
 export const CONTACT = {
   name: 'Sneha Raj',
   location: 'Bengaluru, India',
-  phone: '+91-9334834461',
-  email: 'sneha.24bcs10295@sst.scaler.com',
-  linkedin: 'https://linkedin.com/in/sneharaj',
-  leetcode: 'https://leetcode.com/sneharaj',
-  github: 'https://github.com/sneharaj',
+  email: 'sneharaj7645653@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/sneha-raj-927748332/',
 }
 
 export const METRICS = [

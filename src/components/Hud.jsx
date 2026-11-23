@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Home, Sparkles, Code2, Rocket, TreePine, Flower2, Mail,
-  ChevronLeft, ChevronRight, MapPin, Phone, Linkedin, Github,
+  ChevronLeft, ChevronRight, MapPin, Linkedin,
   BookOpen, Feather, Compass, Sprout,
   Quote, ArrowRight, X, Trophy, ExternalLink, Maximize2, Minimize2, Heart,
 } from 'lucide-react'
@@ -322,22 +322,21 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
 function ContactPanel() {
   const socials = [
     { href: CONTACT.linkedin, icon: Linkedin, label: 'LinkedIn' },
-    { href: CONTACT.leetcode, icon: Code2, label: 'LeetCode' },
-    { href: CONTACT.github, icon: Github, label: 'GitHub' },
   ]
   return (
     <div>
       <PanelTitle sub="Let’s build something lovely together.">Get in Touch</PanelTitle>
-      <p className="text-sm leading-relaxed text-body/80">
-        Whether you want to discuss AI product strategy, debate a book, share poetry, or play a quick
-        badminton match — my inbox is always open.
+      <p className="mt-2 inline-flex items-center rounded-full border border-line bg-chip-bg px-3 py-1 text-[11px] font-medium text-accent">
+        ✨ Open to PM &amp; FDE roles — or just a good conversation
       </p>
-      <a href={`mailto:${CONTACT.email}`} className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-accent-strong">
+      <p className="text-sm leading-relaxed text-body/80">
+        Whether you want to talk AI product strategy, debate a book, share poetry, or play a quick game of colony badminton — my inbox is always open.
+      </p>
+      <a href="mailto:sneharaj7645653@gmail.com" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-accent-strong">
         <Mail className="h-4 w-4" /> Say Hello
       </a>
       <div className="mt-4 flex flex-col gap-1.5 text-sm text-body/80">
         <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> {CONTACT.location}</span>
-        <a href={`tel:${CONTACT.phone}`} className="inline-flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4 text-accent" /> {CONTACT.phone}</a>
         <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center gap-2 hover:text-accent"><Mail className="h-4 w-4 text-accent" /> {CONTACT.email}</a>
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
@@ -347,7 +346,7 @@ function ContactPanel() {
           </a>
         ))}
       </div>
-      <p className="mt-6 text-xs text-muted">© {new Date().getFullYear()} Sneha Raj · Crafted with 🌿, poetry &amp; a little badminton.</p>
+      <p className="mt-6 text-xs text-muted">© 2026 Sneha Raj · Crafted with 🌿, poetry &amp; a little badminton.</p>
     </div>
   )
 }
