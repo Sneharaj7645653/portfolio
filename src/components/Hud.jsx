@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   Home, Sparkles, Code2, Rocket, TreePine, Flower2, Mail,
   ChevronLeft, ChevronRight, MapPin, Phone, Linkedin, Github,
-  BookOpen, Feather, Activity, Sprout,
+  BookOpen, Feather, Compass, Sprout,
   Quote, ArrowRight, X, Trophy, ExternalLink, Maximize2, Minimize2, Heart,
 } from 'lucide-react'
 import { Tag, FlowerRating } from './shared.jsx'
@@ -12,8 +12,7 @@ import ThemeToggle from './ThemeToggle.jsx'
 import {
   CONTACT, ABOUT, PROJECTS,
   FOUNDATION_PROFILES, FOUNDATION_GROUPS, MILESTONES, TRIUMPHS,
-  BOOK_FILTERS, BOOKS, POEMS, BADMINTON_STORY, BADMINTON_WHY, BADMINTON_QUOTE,
-  SUSTAINABILITY_INTRO, SUSTAINABILITY,
+  BOOK_FILTERS, BOOKS, POEM_PLACEHOLDERS, SUSTAINABILITY_NOTE, CURIOSITY_RITUAL,
 } from '../data.js'
 
 const STATIONS = [
@@ -198,8 +197,8 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
   const TABS = [
     { id: 'books', label: 'Books', icon: BookOpen },
     { id: 'poetry', label: 'Poetry', icon: Feather },
-    { id: 'badminton', label: 'Badminton', icon: Activity },
     { id: 'sustainability', label: 'Eco', icon: Sprout },
+    { id: 'curiosities', label: 'Curiosities', icon: Compass },
   ]
   const pick = (id) => { setTab(id); onExpand?.() }
   const [filter, setFilter] = useState(BOOK_FILTERS[0])
@@ -216,7 +215,7 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
 
   return (
     <div>
-      <PanelTitle sub="Where I rest, read & grow.">Personal Sanctuary</PanelTitle>
+      <PanelTitle sub="Where I rest, read, and wander off-script.">Personal Sanctuary</PanelTitle>
       <div className="flex flex-wrap gap-1.5">
         {TABS.map((t) => (
           <button key={t.id} onClick={() => pick(t.id)} className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${tab === t.id ? 'bg-accent text-white' : 'border border-line bg-chip-bg text-accent'}`}>
@@ -228,6 +227,9 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
       <div className="mt-4">
         {tab === 'books' && (
           <div>
+            <p className="mb-3 text-sm leading-relaxed text-body/80">
+              Big believer in physical paperbacks, dog-eared pages, and annotated margins.
+            </p>
             <div className="mb-3 flex flex-wrap gap-1.5">
               {BOOK_FILTERS.map((f) => (
                 <button key={f} onClick={() => setFilter(f)} className={`rounded-full px-2.5 py-1 text-[11px] font-medium transition ${filter === f ? 'bg-accent text-white' : 'border border-line bg-chip-bg text-accent'}`}>{f}</button>
@@ -275,7 +277,7 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
 
         {tab === 'poetry' && (
           <div className="grid gap-2">
-            {POEMS.map((p, i) => (
+            {POEM_PLACEHOLDERS.map((p, i) => (
               <button key={i} onClick={() => setPoem(p)} className="rounded-2xl border border-line bg-chip-bg p-3 text-left transition hover:-translate-y-0.5">
                 <Feather className="mb-1 h-4 w-4 text-accent" />
                 <h4 className="font-display text-base font-semibold text-heading">{p.title}</h4>
@@ -286,28 +288,15 @@ function SanctuaryPanel({ tab = 'books', setTab = () => {}, onExpand }) {
           </div>
         )}
 
-        {tab === 'badminton' && (
-          <div className="space-y-3">
-            <p className="text-sm italic leading-relaxed text-body/80">{BADMINTON_STORY}</p>
-            <p className="text-sm leading-relaxed text-body/80">{BADMINTON_WHY}</p>
-            <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-sage/50 to-sky/40 p-4 dark:from-forest dark:to-indigo">
-              <span className="pointer-events-none absolute -right-2 -top-2 text-4xl opacity-30">🏸</span>
-              <p className="font-display text-base italic leading-snug text-heading">“{BADMINTON_QUOTE.text}”</p>
-              <p className="mt-1 text-xs font-medium text-accent">— {BADMINTON_QUOTE.author}</p>
-            </div>
-          </div>
+        {tab === 'sustainability' && (
+          <p className="text-sm leading-relaxed text-body/80">{SUSTAINABILITY_NOTE}</p>
         )}
 
-        {tab === 'sustainability' && (
-          <div className="space-y-2">
-            <p className="text-sm leading-relaxed text-body/80">{SUSTAINABILITY_INTRO}</p>
-            <p className="pt-1 text-[11px] font-semibold uppercase tracking-widest text-accent">Things I love &amp; believe in</p>
-            {SUSTAINABILITY.map((s) => (
-              <div key={s.title} className="rounded-2xl border border-line bg-chip-bg p-2.5">
-                <p className="text-sm font-semibold text-heading">{s.emoji} {s.title}</p>
-                <p className="text-xs leading-snug text-body/70">{s.body}</p>
-              </div>
-            ))}
+        {tab === 'curiosities' && (
+          <div className="rounded-2xl border border-line bg-chip-bg p-4">
+            <Compass className="mb-2 h-5 w-5 text-accent" />
+            <h4 className="font-display text-base font-semibold text-heading">{CURIOSITY_RITUAL.title}</h4>
+            <p className="mt-1 text-sm leading-relaxed text-body/80">{CURIOSITY_RITUAL.body}</p>
           </div>
         )}
       </div>

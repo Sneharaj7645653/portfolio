@@ -180,38 +180,13 @@ export const TRIUMPHS = [
 
 /* -------------------- SANCTUARY -------------------- */
 
-export const BOOK_FILTERS = ['Currently Reading', 'Fiction & Literature', 'Philosophy & Growth']
+export const BOOK_FILTERS = ['Currently Reading']
 
 export const BOOKS = [
-  // Currently reading — no quotes yet
   { title: 'A Little Life', author: 'Hanya Yanagihara', rating: 0, category: 'Currently Reading' },
   { title: 'Mrs Dalloway', author: 'Virginia Woolf', rating: 0, category: 'Currently Reading' },
   { title: 'Karmabhoomi', author: 'Munshi Premchand', rating: 0, category: 'Currently Reading' },
   { title: 'Master of the Game', author: 'Sidney Sheldon', rating: 0, category: 'Currently Reading' },
-
-  {
-    title: 'Siddhartha', author: 'Hermann Hesse', rating: 5, category: 'Fiction & Literature',
-    lines: [
-      'The river is everywhere at the same time — at the source and at the mouth, everywhere at once.',
-      'Wisdom cannot be imparted. Wisdom that a wise man attempts to impart always sounds like foolishness.',
-      'When someone is seeking, it happens quite easily that he only sees the thing that he is seeking.',
-    ],
-  },
-  {
-    title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', rating: 5, category: 'Fiction & Literature',
-    lines: [
-      'You’re allowed to just live. Did you know that?',
-      'You keep asking why your work is not enough, and I don’t know how to answer that, because it is enough to exist in the world and marvel at it.',
-    ],
-  },
-  {
-    title: '1984', author: 'George Orwell', rating: 5, category: 'Fiction & Literature',
-    lines: [
-      'War is peace. Freedom is slavery. Ignorance is strength.',
-      'If you want a picture of the future, imagine a boot stamping on a human face — forever.',
-      'Perhaps one did not want to be loved so much as to be understood.',
-    ],
-  },
   {
     title: 'The Guide', author: 'R.K. Narayan', rating: 4, category: 'Fiction & Literature',
     lines: [
@@ -611,22 +586,23 @@ It was thoughtful, clever and nuanced`,
   },
 ]
 
-export const BADMINTON_STORY =
-  'My dad is the reason I ever picked up a racket. He’s a badminton fanatic — most evenings at home ended with him coaxing the whole family down to the nearest court. I started out just to humour him, chasing his drop shots and losing every single rally. But somewhere between the losing and the laughing, I fell for the game myself. Now it’s our thing: a quick match to reset after a long day, a little father–daughter rivalry, and the one place where my mind goes completely quiet.'
-
-export const BADMINTON_WHY =
-  'Beyond the fun, it matters to me: a strong, healthy body and a proper refresher after long hours hunched in front of a screen as a CS student. A few games and my head is clear again.'
-
-export const BADMINTON_QUOTE = {
-  text: 'We don’t stop playing because we grow old; we grow old because we stop playing.',
-  author: 'George Bernard Shaw',
-}
-
-export const SUSTAINABILITY_INTRO =
-  'I didn’t learn sustainability from a textbook — I grew up with it. In most Indian homes it’s simply tradition: we still cook and eat from steel and brass utensils that are two or three generations old, we repair long before we replace, and we waste almost nothing. Living gently is the default here, not a trend.'
-
-export const SUSTAINABILITY = [
-  { emoji: '🌾', title: 'Seed Paper', body: 'I love plantable seed paper — cards and notes you bury after reading, so a simple thank-you can grow into a plant.' },
-  { emoji: '🌸', title: 'Phool & Temple Flowers', body: 'Companies like Phool collect the tonnes of flowers offered in temples and turn them into incense and biomaterials instead of letting them choke our rivers — circular thinking rooted in culture.' },
-  { emoji: '📗', title: 'A Psalm for the Wild-Built', body: 'Becky Chambers’ book stayed with me: a somewhat quixotic vision, and yet it paints what a world shaped by human consciousness — kind, curious, unhurried — could actually look like.' },
+export const POEM_PLACEHOLDERS = [
+  {
+    title: '[Poem Title 1]',
+    excerpt: '[Paste stanza / poem here...]',
+    body: '[Paste stanza / poem here...]',
+  },
+  {
+    title: '[Poem Title 2]',
+    excerpt: '[Paste stanza / poem here...]',
+    body: '[Paste stanza / poem here...]',
+  },
 ]
+
+export const SUSTAINABILITY_NOTE =
+  "Code reusability is a must in programming. I hope people soon see how that applies to real life, too—and sustainability isn't a Single Responsibility Principle; it's collaborative work."
+
+export const CURIOSITY_RITUAL = {
+  title: '30 Minutes of History & Etymology',
+  body: "Every day I carve out 30 minutes to read about political history, etymology, and how everyday concepts—like 'left-wing' and 'right-wing'—actually came to be.",
+}
