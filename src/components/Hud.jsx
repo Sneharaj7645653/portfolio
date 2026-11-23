@@ -10,7 +10,7 @@ import { Tag, FlowerRating } from './shared.jsx'
 import Signature from './Signature.jsx'
 import ThemeToggle from './ThemeToggle.jsx'
 import {
-  CONTACT, ABOUT, SKILLS, WEB_PROJECTS, ML_PROJECTS,
+  CONTACT, ABOUT, WEB_PROJECTS, ML_PROJECTS,
   PM_COMPETENCIES, PM_CASES, MILESTONES, TRIUMPHS,
   BOOK_FILTERS, BOOKS, POEMS, BADMINTON_STORY, BADMINTON_WHY, BADMINTON_QUOTE,
   SUSTAINABILITY_INTRO, SUSTAINABILITY,
@@ -63,33 +63,28 @@ function ProjectCard({ p }) {
 function AboutPanel() {
   return (
     <div>
-      <PanelTitle sub="The story, the ethos, the toolkit.">About Me</PanelTitle>
+      <PanelTitle sub="How I think, build, and show up.">About Me</PanelTitle>
       <div className="space-y-3">
         {ABOUT.paragraphs.map((p, i) => (
           <p key={i} className="text-sm leading-relaxed text-body/80">{p}</p>
         ))}
       </div>
-      <h4 className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-accent">Philosophy</h4>
+      <h4 className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-accent">How I Work</h4>
       <div className="mt-2 grid grid-cols-2 gap-2">
-        {ABOUT.philosophy.map((c) => (
+        {ABOUT.workPrinciples.map((c) => (
           <div key={c.title} className="rounded-2xl border border-line bg-chip-bg p-2.5">
             <p className="text-sm font-semibold text-heading">{c.emoji} {c.title}</p>
             <p className="mt-0.5 text-[11px] leading-snug text-body/70">{c.body}</p>
           </div>
         ))}
       </div>
-      <h4 className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-accent">Toolkit</h4>
-      <div className="mt-2 space-y-2">
-        {SKILLS.map((s) => (
-          <div key={s.group}>
-            <p className="text-xs font-semibold text-heading">{s.group}</p>
-            <div className="mt-1 flex flex-wrap gap-1.5">{s.items.map((it) => <Tag key={it}>{it}</Tag>)}</div>
-          </div>
+      <h4 className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-accent">Off the Clock</h4>
+      <ul className="mt-2 grid grid-cols-1 gap-2 text-sm text-body/80">
+        {ABOUT.facts.map((fact) => (
+          <li key={fact.title}>
+            {fact.emoji} <strong className="text-heading">{fact.title}</strong> — {fact.body}
+          </li>
         ))}
-      </div>
-      <h4 className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-accent">A few fun facts</h4>
-      <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-body/80">
-        {ABOUT.facts.map((f) => <li key={f}>{f}</li>)}
       </ul>
     </div>
   )

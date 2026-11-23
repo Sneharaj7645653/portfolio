@@ -23,30 +23,21 @@ export const METRICS = [
 
 export const ABOUT = {
   paragraphs: [
-    'I’m a computer science scholar pursuing dual B.Sc. degrees at Scaler School of Technology and BITS Pilani, where I fell in love with the space where rigorous engineering meets human-centered product thinking.',
-    'I build across the stack — shipping GenAI web apps, training deep-learning models, and leading product from discovery to launch. I care about systems that are technically sound and genuinely kind to the people who use them.',
-    'Off the clock you’ll find me on a badminton court, buried in a novel, writing poetry, or thinking about how technology can be gentler on the planet.',
+    'I wear a lot of hats—software engineering, AI, product—currently pursuing dual B.Sc. CS degrees at Scaler School of Technology and BITS Pilani.',
+    'At the core of everything I do is simple: understand the person on the other side, prioritize ruthlessly, and move fast. With AI tools today, shipping code isn\'t the hard part anymore. What actually matters is finding the right problem, building for the right people, and understanding the scale you\'re working at.',
+    'I love defending my work and explaining the \'why\' behind what I build—and honestly, I apply that exact same logic to life outside of tech, too.',
   ],
-  philosophy: [
-    { emoji: '🌸', title: 'Human-Centered', body: 'Start with real people and their unspoken needs — the tech comes second.' },
-    { emoji: '🌿', title: 'Outcome-Driven', body: 'RICE, Kano, and honest metrics over vanity features.' },
-    { emoji: '🏸', title: 'Agile & Resilient', body: 'Quick reflexes and endurance — from the court to the sprint board.' },
-    { emoji: '🌍', title: 'Conscious', body: 'Sustainability and ethics threaded through every decision.' },
+  workPrinciples: [
+    { emoji: '', title: 'No Ego, Just Questions', body: 'I’m quick to admit what I don’t know and even quicker to ask for help.' },
+    { emoji: '', title: 'Feedback-Friendly', body: 'Tell me where it’s broken. Good feedback is the fastest shortcut to better work.' },
+    { emoji: '', title: 'Respect the Clock', body: 'I value other people’s time—clear context, sharp priorities, zero fluff.' },
+    { emoji: '', title: 'Honest & Direct', body: 'Say what needs to be said, kindly and clearly. No corporate riddles.' },
   ],
   facts: [
-    '☕ Runs on filter coffee & curiosity',
-    '📖 Reads ~40 books a year',
-    '🏸 State-level badminton enthusiast',
-    '✍️ Writes poetry about code & nature',
+    { emoji: '🗣️', title: 'Professional Chit-Chatter', body: 'I love talking about anything and everything. It gives me a weird stash of random context that helps me connect dots in teams and easily translate across different domains.' },
+    { emoji: '🏸', title: 'Colony Badminton Pro', body: 'The high-stakes kind where hitting the shuttle into a neighbor’s house is an automatic point lost.' },
   ],
 }
-
-export const SKILLS = [
-  { group: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'C++'] },
-  { group: 'AI / ML', items: ['PyTorch', 'TensorFlow', 'scikit-learn', 'Hugging Face', 'LangChain', 'OpenCV'] },
-  { group: 'Web', items: ['React', 'Next.js', 'Node.js', 'Tailwind CSS', 'PostgreSQL', 'MongoDB'] },
-  { group: 'Product', items: ['Discovery', 'PRDs', 'RICE', 'Kano', 'JTBD', 'A/B Testing', 'Figma', 'Jira'] },
-]
 
 /* -------------------- WEB DEV / GEN-AI PROJECTS (dummy) -------------------- */
 
