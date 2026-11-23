@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Home, Sparkles, Globe, BrainCircuit, Cpu, Rocket, TreePine, Flower2, Mail,
-  ChevronLeft, ChevronRight, MapPin, Phone, Linkedin, Github, Code2,
+  Home, Sparkles, Code2, Rocket, TreePine, Flower2, Mail,
+  ChevronLeft, ChevronRight, MapPin, Phone, Linkedin, Github,
   Lightbulb, TrendingUp, Target, BookOpen, Feather, Activity, Sprout,
   Quote, ArrowRight, X, Trophy, ExternalLink, Maximize2, Minimize2, Heart,
 } from 'lucide-react'
@@ -10,7 +10,7 @@ import { Tag, FlowerRating } from './shared.jsx'
 import Signature from './Signature.jsx'
 import ThemeToggle from './ThemeToggle.jsx'
 import {
-  CONTACT, ABOUT, WEB_PROJECTS, ML_PROJECTS,
+  CONTACT, ABOUT, PROJECTS,
   PM_COMPETENCIES, PM_CASES, MILESTONES, TRIUMPHS,
   BOOK_FILTERS, BOOKS, POEMS, BADMINTON_STORY, BADMINTON_WHY, BADMINTON_QUOTE,
   SUSTAINABILITY_INTRO, SUSTAINABILITY,
@@ -19,7 +19,7 @@ import {
 const STATIONS = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: Sparkles },
-  { id: 'tech', label: 'Tech', icon: Cpu },
+  { id: 'tech', label: 'Projects', icon: Code2 },
   { id: 'product', label: 'Product', icon: Rocket },
   { id: 'journey', label: 'Journey', icon: TreePine },
   { id: 'sanctuary', label: 'Sanctuary', icon: Flower2 },
@@ -41,19 +41,24 @@ function ProjectCard({ p }) {
   return (
     <motion.div whileHover={{ y: -3 }} className="rounded-2xl border border-line bg-chip-bg p-3">
       <div className="flex items-start justify-between gap-2">
-        <div>
-          <h3 className="font-display text-base font-semibold leading-tight text-heading">{p.title}</h3>
-          <p className="text-xs font-medium text-accent">{p.tagline}</p>
-        </div>
-        <span className="shrink-0 rounded-full bg-surface px-2 py-0.5 text-[10px] font-semibold text-muted">{p.year}</span>
+        <h3 className="font-display text-base font-semibold leading-tight text-heading">{p.title}</h3>
+        {(p.year || p.role) && (
+          <span className="shrink-0 rounded-full bg-surface px-2 py-0.5 text-[10px] font-semibold text-muted">
+            {p.year || p.role}
+          </span>
+        )}
       </div>
-      <p className="mt-2 text-xs leading-relaxed text-body/80">{p.description}</p>
-      {p.metric && (
-        <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-bold text-accent">
-          <TrendingUp className="h-3 w-3" /> {p.metric}
-        </p>
+      <p className="mt-2 text-xs leading-relaxed text-body/80">{p.summary}</p>
+      <div className="mt-2 flex flex-wrap gap-1.5">{p.skills.map((skill) => <Tag key={skill}>{skill}</Tag>)}</div>
+      {p.links?.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {p.links.map((link) => (
+            <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-[10px] font-semibold text-accent transition hover:-translate-y-0.5">
+              {link.label} <ExternalLink className="h-3 w-3" />
+            </a>
+          ))}
+        </div>
       )}
-      <div className="mt-2 flex flex-wrap gap-1.5">{p.stack.map((s) => <Tag key={s}>{s}</Tag>)}</div>
     </motion.div>
   )
 }
@@ -90,23 +95,30 @@ function AboutPanel() {
   )
 }
 
-function TechPanel() {
-  const [track, setTrack] = useState('web')
-  const list = track === 'web' ? WEB_PROJECTS : ML_PROJECTS
+const PROJECT_FILTERS = ['All', 'Product', 'Engineering', 'AI / ML', 'Case Studies']
+
+function ProjectsPanel() {
+  const [filter, setFilter] = useState('All')
+  const projects = filter === 'All' ? PROJECTS : PROJECTS.filter((project) => project.categories.includes(filter))
+
   return (
     <div>
-      <PanelTitle sub="Full-stack GenAI apps & machine-learning projects.">Tech</PanelTitle>
-      <div className="mb-3 flex gap-2">
-        <button onClick={() => setTrack('web')} className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${track === 'web' ? 'bg-accent text-white' : 'border border-line bg-chip-bg text-accent'}`}>
-          <Globe className="h-3.5 w-3.5" /> Web · GenAI
-        </button>
-        <button onClick={() => setTrack('ml')} className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${track === 'ml' ? 'bg-accent text-white' : 'border border-line bg-chip-bg text-accent'}`}>
-          <BrainCircuit className="h-3.5 w-3.5" /> ML · AI
-        </button>
+      <PanelTitle sub="Interdisciplinary builds, ML experiments, and product teardowns.">Projects</PanelTitle>
+      <div className="mb-3 flex flex-wrap gap-2">
+        {PROJECT_FILTERS.map((item) => (
+          <button
+            key={item}
+            onClick={() => setFilter(item)}
+            aria-pressed={filter === item}
+            className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold transition ${filter === item ? 'bg-accent text-white' : 'border border-line bg-chip-bg text-accent'}`}
+          >
+            {item}
+          </button>
+        ))}
       </div>
       <AnimatePresence mode="wait">
-        <motion.div key={track} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }} className="space-y-2.5">
-          {list.map((p) => <ProjectCard key={p.title} p={p} />)}
+        <motion.div key={filter} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }} className="space-y-2.5">
+          {projects.map((p) => <ProjectCard key={p.title} p={p} />)}
         </motion.div>
       </AnimatePresence>
     </div>
@@ -343,7 +355,7 @@ function ContactPanel() {
 }
 
 // Home (index 0) intentionally has no panel — the landing is the scene alone.
-const PANELS = [null, AboutPanel, TechPanel, ProductPanel, JourneyPanel, SanctuaryPanel, ContactPanel]
+const PANELS = [null, AboutPanel, ProjectsPanel, ProductPanel, JourneyPanel, SanctuaryPanel, ContactPanel]
 
 /* ---------------- HUD shell ---------------- */
 
